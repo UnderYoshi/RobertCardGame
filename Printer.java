@@ -1,5 +1,9 @@
 import java.util.HashMap;
 
+import src.Game;
+import src.game_objects.cards.Card;
+import src.game_objects.cards.Card.Suit;
+
 public class Printer {
     Game game;
 

@@ -1,4 +1,10 @@
+package src;
 import java.util.*;
+
+import Printer;
+import src.game_objects.cards.Card;
+import src.game_objects.cards.Card.Suit;
+import src.game_objects.deck.Deck;
 
 public class Game {
 

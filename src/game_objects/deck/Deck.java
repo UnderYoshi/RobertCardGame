@@ -1,4 +1,8 @@
+package src.game_objects.deck;
 import java.util.*;
+
+import src.game_objects.cards.Card;
+import src.game_objects.cards.Card.Color;
 
 public class Deck extends ArrayList<Card> {
 
