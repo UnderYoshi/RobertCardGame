@@ -1,44 +1,14 @@
 package src.game_objects.deck;
 import java.util.*;
-
+import src.game_objects.cards.AnimateCard;
 import src.game_objects.cards.Card;
-import src.game_objects.cards.Card.Color;
 
 public class Deck extends ArrayList<Card> {
 
-    public static enum Type {STANDARD52, STANDARD54, JOKERS4};
-    public final Type type;
+    public static enum Type {STANDARD};
 
-    public Deck(Type type) {
-        this.type = type;
-
-        switch(this.type) {
-            case STANDARD52:
-            for (PlayingCard.Suit suit: PlayingCard.Suit.values()) {
-                for (PlayingCard.Rank rank: PlayingCard.Rank.values()) {
-                    this.add(new PlayingCard(rank, suit));
-                }
-            }
-            break;
-            case STANDARD54:
-            for (PlayingCard.Suit suit: PlayingCard.Suit.values()) {
-                for (PlayingCard.Rank rank: PlayingCard.Rank.values()) {
-                    this.add(new PlayingCard(rank, suit));
-                }
-            }
-            this.add(new JokerCard(Card.Color.RED));
-            this.add(new JokerCard(Card.Color.BLACK));
-            break;
-            case JOKERS4:
-            this.add(new JokerCard(Card.Color.RED));
-            this.add(new JokerCard(Card.Color.RED));
-            this.add(new JokerCard(Card.Color.BLACK));
-            this.add(new JokerCard(Card.Color.BLACK));
-            break;
-            default:
-                this.add(new PlayingCard(PlayingCard.Rank.ACE, PlayingCard.Suit.SPADES));
-                break;
-          }
+    public Deck() {
+        this.add(new AnimateCard("Rob"));
     }
 
 
@@ -56,7 +26,7 @@ public class Deck extends ArrayList<Card> {
         
         Random rand = new Random();
 
-        ArrayList<Card> newCardOrder = new ArrayList<Card>();
+        ArrayList<Card> newCardOrder = new ArrayList<>();
         for (int i = m; i >= n; i--) {
             int nextCard = n + rand.nextInt(i - n + 1); //picks a card in range n, i
             newCardOrder.add(this.get(nextCard));
@@ -69,7 +39,7 @@ public class Deck extends ArrayList<Card> {
         // Shuffles all cards in deck
         Random rand = new Random();
 
-        ArrayList<Card> newCardOrder = new ArrayList<Card>();
+        ArrayList<Card> newCardOrder = new ArrayList<>();
         for (int i = this.size() - 1; i >= 0; i--) {
             int nextCard = rand.nextInt(i + 1); //picks a card in range n, i
             newCardOrder.add(this.get(nextCard));
@@ -109,7 +79,7 @@ public class Deck extends ArrayList<Card> {
     }
     
     public ArrayList<Card> drawMultiple(int amount) {
-        ArrayList<Card> cardsToDraw = new ArrayList<Card>();
+        ArrayList<Card> cardsToDraw = new ArrayList<>();
         for (int i = 0; i < amount; i++) {
             cardsToDraw.add(this.get(0));
             this.remove(0);
@@ -122,5 +92,11 @@ public class Deck extends ArrayList<Card> {
     }
     public void putOnBottom(ArrayList<Card> cards) {
         this.addAll(cards);
+    }
+    public void putOnTop(Card card) {
+        this.add(0, card);
+    }
+    public void putOnTop(ArrayList<Card> cards) {
+        this.addAll(0, cards);
     }
 }

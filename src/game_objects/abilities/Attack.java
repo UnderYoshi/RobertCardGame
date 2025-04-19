@@ -1,4 +1,9 @@
 package src.game_objects.abilities;
-public class Attack extends GenericAbility {
-    
+import src.game_objects.abilities.attributes.AbilityType;
+
+public class Attack extends Ability {
+    Attack(String abilityName, String cardName)
+    {
+        super(abilityName, cardName, AbilityType.ATTACK);
+    }
 }
