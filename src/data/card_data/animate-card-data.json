@@ -1,0 +1,32 @@
+[
+    {
+        "name": "A",
+        "description": "ts is card a",
+        "classes": "class1;;;class 2",
+        "abilities": "ability1;;;ability2",
+        "element": "CREATION",
+        "rarity": "LEGENDARY",
+        "power": 100,
+        "starCost": 4
+    },
+    {
+        "name": "B",
+        "description": "ts is card b",
+        "classes": "class1;;;class 2",
+        "abilities": "ability1;;;ability2",
+        "element": "FIRE",
+        "rarity": "RARE",
+        "power": 8,
+        "starCost": 2
+    },
+    {
+        "name": "C",
+        "description": "ts is card c",
+        "classes": "class1;;;class 2",
+        "abilities": "ability1;;;ability2",
+        "element": "NEUTRAL",
+        "rarity": "COMMON",
+        "power": 3,
+        "starCost": 1
+    }
+]

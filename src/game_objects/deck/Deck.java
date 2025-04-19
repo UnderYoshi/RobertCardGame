@@ -1,14 +1,17 @@
 package src.game_objects.deck;
 import java.util.*;
-import src.game_objects.cards.AnimateCard;
-import src.game_objects.cards.Card;
+import src.game_objects.cards.*;
 
 public class Deck extends ArrayList<Card> {
 
     public static enum Type {STANDARD};
 
     public Deck() {
-        this.add(new AnimateCard("Rob"));
+        this.add(new AnimateCard("A"));
+        // this.add(new InanimateCard("B"));
+        // this.add(new EnergyCard("Fire Energy"));
+        // this.add(new FoodCard("Risotto"));
+        // this.add(new SpellCard("Fireball"));
     }
 
 
