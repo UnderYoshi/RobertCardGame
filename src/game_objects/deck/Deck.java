@@ -8,6 +8,8 @@ public class Deck extends ArrayList<Card> {
 
     public Deck() {
         this.add(new AnimateCard("A"));
+        this.add(new AnimateCard("B"));
+        this.add(new AnimateCard("C"));
         // this.add(new InanimateCard("B"));
         // this.add(new EnergyCard("Fire Energy"));
         // this.add(new FoodCard("Risotto"));

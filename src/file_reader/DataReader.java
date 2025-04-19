@@ -7,20 +7,20 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import src.dependencies.CardKeyPair;
 import src.file_reader.card_data.CardData;
-import src.game_objects.cards.attributes.CardType;
+import src.game_objects.cards.attributes.*;
 
 public class DataReader
 {
     private static DataReader instance;
 
-    private String cardDataPath = "src/data/card_data/";
-    private String animateCardDataFile = "animate-card-data.json";
-    private String inanimateCardDataFile = "inanimate-card-data.json";
-    private String championCardDataFile = "champion-card-data.json";
-    private String spellCardDataFile = "spell-card-data.json";
-    private String foodCardDataFile = "food-card-data.json";
-    private String debuffCardDataFile = "debuff-card-data.json";
-    private String energyCardDataFile = "energy-card-data.json";
+    private final String cardDataPath = "src/data/card_data/";
+    private final String animateCardDataFile = "animate-card-data.json";
+    private final String inanimateCardDataFile = "inanimate-card-data.json";
+    private final String championCardDataFile = "champion-card-data.json";
+    private final String spellCardDataFile = "spell-card-data.json";
+    private final String foodCardDataFile = "food-card-data.json";
+    private final String debuffCardDataFile = "debuff-card-data.json";
+    private final String energyCardDataFile = "energy-card-data.json";
     private final HashMap<CardKeyPair, CardData> cardCache = new HashMap<>();
 
     private DataReader()
@@ -74,8 +74,9 @@ public class DataReader
         // Throws errors for invalid cards, useful for debugging
         if (!cardDataValues.containsKey("name")) {throw new IllegalArgumentException("Card with name " + name + " of wanted type does not exist");}
 
+        mapToVariables(cardData, cardDataValues);
         cacheCard(cardData);
-        return mapToVariables(cardDataValues, cardData);
+        return cardData;
     }
 
     private Map<String,String> readCardFields(String targetName, String filePath)
@@ -99,9 +100,24 @@ public class DataReader
         return fields;
     }
 
-    private CardData mapToVariables(Map<String, String> map, CardData cardData)
+    private void mapToVariables(CardData cardData, Map<String, String> map)
     {
-        return cardData;
+        for (Map.Entry<String, String> entry : map.entrySet())
+        {
+            switch (entry.getKey())
+            {
+                case "element" -> {cardData.element = Element.valueOf(entry.getValue());}
+                case "description" -> {cardData.description = entry.getValue();}
+                case "rarity" -> {cardData.rarity = Rarity.valueOf(entry.getValue());}
+                case "classes" -> {}
+                case "turnTimer" -> {cardData.turnTimer = Integer.parseInt(entry.getValue());}
+                case "consumableType" -> {cardData.consumableType = ConsumableType.valueOf(entry.getValue());}
+                case "energyCost" -> {}
+                case "power" -> {cardData.maxPower = Integer.parseInt(entry.getValue());}
+                case "starCost" -> {cardData.starCost = Integer.parseInt(entry.getValue());}
+                case "actions" -> {}
+            }
+        }
     }
 
 }

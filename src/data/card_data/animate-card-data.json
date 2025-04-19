@@ -1,7 +1,7 @@
 [
     {
         "name": "A",
-        "description": "ts is card a",
+        "description": "ts is card A",
         "classes": "class1;;;class 2",
         "abilities": "ability1;;;ability2",
         "element": "CREATION",
@@ -11,7 +11,7 @@
     },
     {
         "name": "B",
-        "description": "ts is card b",
+        "description": "ts is card B",
         "classes": "class1;;;class 2",
         "abilities": "ability1;;;ability2",
         "element": "FIRE",
