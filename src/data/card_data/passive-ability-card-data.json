@@ -1,0 +1,9 @@
+[
+    {
+        "name": "Ability A;;;Card A",
+        "description": "ts is ability A",
+        "turnTumer": 0,
+        "castingSpeed": "INSTANT",
+        "energyCost": "Neutral:0"
+    }
+]

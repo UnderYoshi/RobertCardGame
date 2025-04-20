@@ -3,7 +3,7 @@ import src.file_reader.DataReader;
 import src.file_reader.card_data.CardData;
 import src.game_objects.cards.attributes.CardType;
 
-abstract class SummonableCard extends EntityCard
+public abstract class SummonableCard extends EntityCard
 {
     SummonableCard(String name, CardType cardType)
     {

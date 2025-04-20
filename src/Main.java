@@ -1,6 +1,7 @@
 package src;
 
 import src.game_objects.cards.Card;
+import src.game_objects.cards.EntityCard;
 import src.game_objects.deck.Deck;
 
 public class Main {
@@ -12,6 +13,9 @@ public class Main {
             System.out.println("    -" + card.getDescription() + "-");
             System.out.println("    -" + card.getCardType() + "-");
             System.out.println("    -" + card.getElement() + "-");
+            if (card instanceof EntityCard ec) {
+                System.out.println("    -" + ec.getClasses().get(0) + "-");
+            }
         }
     }
 }

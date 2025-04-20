@@ -4,7 +4,7 @@ import src.file_reader.DataReader;
 import src.file_reader.card_data.CardData;
 import src.game_objects.cards.attributes.*;
 
-abstract class EntityCard extends Card implements HasRarity
+public abstract class EntityCard extends Card implements HasRarity
 {
     public EntityCard(String name, CardType cardType)
     {

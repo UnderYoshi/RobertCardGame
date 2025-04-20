@@ -1,13 +1,11 @@
 [
     {
-        "name": "Rob",
-        "power": 1000,
-        "type": "ANIMATE",
+        "name": "A",
+        "description": "ts is card A",
+        "classes": "class1;;;class 2",
+        "abilities": "ability1;;;ability2",
+        "element": "CREATION",
         "rarity": "LEGENDARY",
-        "star-cost": 3,
-        "element": "NEUTRAL",
-        "description": "sdhfhjdfkdfhksjdfhs",
-        "classes": ["class1", "class2"],
-        "isMagicUser": true
+        "power": 100
     }
 ]

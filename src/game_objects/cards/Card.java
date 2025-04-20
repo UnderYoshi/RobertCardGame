@@ -19,7 +19,7 @@ public abstract class Card
     String description;
     Element element;
     CardType cardType;
-    boolean isPlayable;
+    protected boolean isPlayable;
 
     public String getName() {return this.name;}
     public String getDescription() {return this.description;}

@@ -1,7 +1,7 @@
 package src.game_objects.cards;
 import src.game_objects.cards.attributes.CardType;
 
-abstract class DebuffCard extends AttachableCard
+public class DebuffCard extends AttachableCard
 {
     public DebuffCard(String name)
     {

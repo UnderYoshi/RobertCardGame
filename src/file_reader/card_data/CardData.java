@@ -11,9 +11,12 @@ public class CardData
     public String description;
     public Rarity rarity;
     public ArrayList<String> classes;
+    public ArrayList<String> abilities;
     public int turnTimer;
-    public ConsumableType consumableType;
+    public CastingSpeed castingSpeed;
     public HashMap<Element, Integer> energyCost;
     public int maxPower;
     public int starCost;
+
+    // Ability exclusive
 }
