@@ -1,41 +1,14 @@
 package src.game_objects.game;
-import src.file_reader.DataReader;
 import src.game_objects.cards.Card;
 import src.game_objects.game.player.PlayerContext;
 
-public class GameEventListener {
-    private static GameEventListener instance;
-    private static GameMatch currentAssignedGameMatch;
-    private GameEventListener(GameMatch match) {
-        currentAssignedGameMatch = match;
-    }
-    
-    public static synchronized GameEventListener getInstance() {
-        return instance;
-    }
-
-    public static synchronized GameMatch getAssignedMatch() {
-        return currentAssignedGameMatch;
-    }
-
-    public static synchronized GameEventListener createNewInstance(GameMatch match) {
-        instance = new GameEventListener(match);
-        currentAssignedGameMatch = match;
-        return instance;
-    }
-    
-
-    
-    public void signal(GameEvent event) {
-        signal(event, null, null);
-    }
-    public void signal(GameEvent event, Card source) {
-        signal(event, source, null);
-    }
-    public void signal(GameEvent event, PlayerContext player) {
-        signal(event, null, player);
-    }
-    public void signal(GameEvent event, Card source, PlayerContext player) {
-        currentAssignedGameMatch.signalAll(event, source, player);
-    }
+public interface GameEventListener {
+    /**
+     * Called by the dispatcher whenever any object fires a game event.
+     *
+     * @param event        the type of event (SPELL_CAST, CREATURE_DIED, etc.)
+     * @param sourceCard   the card that triggered it (may be null if the source is not a card)
+     * @param sourcePlayer the player who caused it (may be null for non‐player sources)
+     */
+    void onGameEvent(GameEvent event, Card sourceCard, PlayerContext sourcePlayer);
 }

@@ -2,6 +2,7 @@ package src.file_reader.card_data;
 import java.util.ArrayList;
 import java.util.HashMap;
 import src.game_objects.cards.attributes.*;
+import src.game_objects.effects.Effect;
 
 public class CardData
 {
@@ -18,5 +19,7 @@ public class CardData
     public int maxPower;
     public int starCost;
 
+    public ArrayList<Effect> effects;
     // Ability exclusive
+    public HashMap<String, Integer> args;
 }

@@ -1,8 +1,8 @@
-package src.game_objects.abilities.effects;
+package src.game_objects.effects; 
+import java.util.HashMap;
 import src.game_objects.cards.EntityCard;
-import src.game_objects.game.GameContext;
 
-public interface OneToOneEffectBehavior
+public abstract class OneToOneEffect extends Effect
 {
     /** 
      * Execute the ability.  
@@ -10,5 +10,5 @@ public interface OneToOneEffectBehavior
      * @param target   whatever the ability is targeting  
      * @param game     the game state/context 
      */
-    void execute(EntityCard source, EntityCard target, GameContext game);
+    public abstract void execute(EntityCard source, EntityCard target, HashMap<String, Integer> args);
 }

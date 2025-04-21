@@ -33,12 +33,12 @@ public abstract class EntityCard extends Card implements HasRarity
     public int getMaxPower() {return this.maxPower;}
     public int getPower() {return this.power;}
 
-    void heal (int health)
+    public void heal (int health)
     {
         this.power = Math.min(this.power + health, maxPower);
     }
 
-    void damage (int damage)
+    public void damage (int damage)
     {
         this.power = this.power - damage;
     }

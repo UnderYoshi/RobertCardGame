@@ -2,6 +2,7 @@ package src.game_objects.game;
 import src.game_objects.game.player.PlayerContext;
 
 public class GameMatch {
+    private final GameEventDispatcher dispatcher = new GameEventDispatcher();
     private final PlayerContext[] players = new PlayerContext[2];
     private PlayerContext currentPlayer;
     private int turnNumber;
@@ -23,4 +24,8 @@ public class GameMatch {
         currentPlayer = (currentPlayer == players[0]) ? players[1] : players[0];
         turnNumber++;
     }
+
+    public GameEventDispatcher getDispatcher() {return dispatcher;}
+    public int getTurnNumber() {return turnNumber;}
+    public PlayerContext getCurrentPlayer() {return currentPlayer;}
 }

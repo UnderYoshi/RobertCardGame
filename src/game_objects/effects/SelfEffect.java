@@ -1,15 +1,15 @@
-package src.game_objects.abilities.effects;
+package src.game_objects.effects; 
 
+import java.util.HashMap;
 import src.game_objects.cards.EntityCard;
-import src.game_objects.game.GameContext;
 
-public interface SelfEffectBehavior
+public abstract class SelfEffect extends Effect
 {
     /** 
      * Execute the ability.  
      * @param source   the card that owns this ability  
      * @param game     the game state/context 
      */
-    void execute(EntityCard source, GameContext game);
+    public abstract void execute(EntityCard source, HashMap<String, Integer> args);
 }
     

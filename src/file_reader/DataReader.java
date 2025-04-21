@@ -12,13 +12,13 @@ import src.dependencies.AbilityKeyPair;
 import src.dependencies.CardKeyPair;
 import src.file_reader.card_data.CardData;
 import src.game_objects.cards.attributes.*;
+import src.game_objects.effects.EffectFactory;
 
 public class DataReader
 {
     private static DataReader instance;
 
     private final String cardDataPath = "src/data/card_data/";
-    private final String abilityDataPath = "src/data/ability_data";
 
     private final String animateCardDataFile = "animate-card-data.json";
     private final String inanimateCardDataFile = "inanimate-card-data.json";
@@ -149,6 +149,23 @@ public class DataReader
                     String[] parts = entry.getValue().split("\\s*;;;\\s*");
                     cardData.abilities = new ArrayList<>();
                     cardData.abilities.addAll(Arrays.asList(parts));
+                }
+                case "effects" ->
+                {
+                    String[] parts = entry.getValue().split("\\s*;;;\\s*");
+                    cardData.effects = new ArrayList<>();
+                    for (String effectString : parts) {
+                        cardData.effects.add(EffectFactory.build(effectString));
+                    }
+                }
+                case "args" ->
+                {
+                    cardData.args = new HashMap<>();
+                    String[] parts1 = entry.getValue().split("\\s*;;;\\s*");
+                    for (String string : parts1) {
+                        String[] parts2 = string.split("\\s*:\\s*");
+                        cardData.args.put(parts2[0], Integer.valueOf(parts2[1]));
+                    }
                 }
             }
         }
