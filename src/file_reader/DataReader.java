@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 import src.dependencies.AbilityKeyPair;
 import src.dependencies.CardKeyPair;
 import src.file_reader.card_data.CardData;
+import src.game_objects.cards.ability_cards.attributes.TargetCardType;
 import src.game_objects.cards.attributes.*;
 import src.game_objects.effects.EffectFactory;
 
@@ -167,6 +168,7 @@ public class DataReader
                         cardData.args.put(parts2[0], Integer.valueOf(parts2[1]));
                     }
                 }
+                case "targetCardType" -> {cardData.targetCardType = TargetCardType.valueOf(entry.getValue());}
             }
         }
     }

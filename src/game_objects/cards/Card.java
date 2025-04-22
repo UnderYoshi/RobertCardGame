@@ -15,9 +15,9 @@ public abstract class Card
         this.isPlayable = false;
     }
     // General attributes (all cards)
-    String name;
-    String description;
-    Element element;
+    protected String name;
+    protected String description;
+    protected Element element;
     CardType cardType;
     protected boolean isPlayable;
 
