@@ -10,5 +10,5 @@ public interface GameEventListener {
      * @param sourceCard   the card that triggered it (may be null if the source is not a card)
      * @param sourcePlayer the player who caused it (may be null for non‐player sources)
      */
-    void onGameEvent(GameEvent event, Card sourceCard, PlayerContext sourcePlayer);
+    void onGameEvent(GameEvent event, Card sourceCard, Card targetCard, PlayerContext sourcePlayer);
 }

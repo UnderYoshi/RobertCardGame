@@ -14,10 +14,10 @@ public class GameEventDispatcher {
         listeners.remove(listener);
     }
 
-    public void fire(GameEvent event, Card card, PlayerContext player) {
+    public void fire(GameEvent event, Card sourceCard, Card targetCard, PlayerContext player) {
         // copy the list to avoid ConcurrentModification if listeners add/remove
         for (GameEventListener l : new ArrayList<>(listeners)) {
-            l.onGameEvent(event, card, player);
+            l.onGameEvent(event, sourceCard, targetCard, player);
         }
     }
 }

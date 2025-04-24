@@ -1,13 +1,12 @@
 [
     {
-        "name": "Rob",
-        "power": 1000,
-        "type": "ANIMATE",
-        "rarity": "LEGENDARY",
-        "star-cost": 3,
+        "name": "C",
+        "description": "ts is inanimate card c",
+        "classes": "class1;;;class 2",
+        "abilities": "ability1;;;ability2",
         "element": "NEUTRAL",
-        "description": "sdhfhjdfkdfhksjdfhs",
-        "classes": ["class1", "class2"],
-        "isMagicUser": true
+        "rarity": "COMMON",
+        "power": 3,
+        "starCost": 1
     }
 ]

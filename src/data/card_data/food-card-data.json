@@ -1,13 +1,11 @@
 [
     {
-        "name": "Rob",
-        "power": 1000,
-        "type": "ANIMATE",
+        "name": "Food1",
         "rarity": "LEGENDARY",
         "star-cost": 3,
         "element": "NEUTRAL",
         "description": "sdhfhjdfkdfhksjdfhs",
-        "classes": ["class1", "class2"],
-        "isMagicUser": true
+        "effects": "effect1;;;effect2",
+        "args": "healAmount:5"
     }
 ]
