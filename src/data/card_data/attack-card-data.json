@@ -2,12 +2,13 @@
     {
         "name": "Basic Attack;;;Card A",
         "description": "ts is ability A",
-        "turnTumer": 0,
+        "turnTimer": 0,
         "castingSpeed": "INSTANT",
         "energyCost": "Neutral:0",
         "frontlineAttack": true,
         "backlineAttack": false,
         "args": "damage:2",
-        "effects": "DamageSingleEnemyEffect"
+        "effects": "DamageSingleEnemyEffect",
+        "targetCardType": "ENEMY"
     }
 ]

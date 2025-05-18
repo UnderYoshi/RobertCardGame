@@ -20,11 +20,9 @@ public abstract class AbilityCard extends AttachableCard
     }
     CastingSpeed castingSpeed;
     HashMap<Element, Integer> energyCost = new HashMap<>(); // TODO: MAKE FINAL AND ADD ELEMENTS SEPERATELY IN CONSTRUCTOR
-    HashMap<String, Integer> args;
     TargetCardType targetCardType;
 
     public TargetCardType getTargetCardType() {return targetCardType;}
-    public HashMap<String, Integer> getArgs() {return this.args;}
     public CastingSpeed getCastingSpeed() {return this.castingSpeed;}
     public HashMap<Element, Integer> getEnergyCost() {return this.energyCost;}
     

@@ -1,13 +1,15 @@
 [
     {
-        "name": "Rob",
-        "power": 1000,
-        "type": "ANIMATE",
+        "name": "A",
         "rarity": "LEGENDARY",
-        "star-cost": 3,
-        "element": "NEUTRAL",
-        "description": "sdhfhjdfkdfhksjdfhs",
-        "classes": ["class1", "class2"],
-        "isMagicUser": true
+        "starCost": 3,
+        "element": "FIRE",
+        "description": "ts is spell A",
+        "effects": "effect1;;;effect2",
+        "turnTimer": "0",
+        "args": "healAmount:5",
+        "castingSpeed": "0",
+        "energyCost": "FIRE:1",
+        "targetCardType": "FRIENDLY"
     }
 ]

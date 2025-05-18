@@ -2,10 +2,13 @@
     {
         "name": "Food1",
         "rarity": "LEGENDARY",
-        "star-cost": 3,
+        "starCost": 3,
         "element": "NEUTRAL",
-        "description": "sdhfhjdfkdfhksjdfhs",
+        "description": "ts is food Food1",
         "effects": "effect1;;;effect2",
-        "args": "healAmount:5"
+        "turnTimer": "0",
+        "args": "healAmount:5",
+        "castingSpeed": "0",
+        "energyCost": ""
     }
 ]

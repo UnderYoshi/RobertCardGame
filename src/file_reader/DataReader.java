@@ -26,7 +26,7 @@ public class DataReader
     private final String championCardDataFile = "champion-card-data.json";
     private final String spellCardDataFile = "spell-card-data.json";
     private final String foodCardDataFile = "food-card-data.json";
-    private final String debuffCardDataFile = "debuff-card-data.json";
+    private final String statusEffectCardDataFile = "status-effect-card-data.json";
     private final String energyCardDataFile = "energy-card-data.json";
 
     private final String attackCardDataFile = "attack-card-data.json";
@@ -39,23 +39,19 @@ public class DataReader
     private DataReader()
     {}
     
-    public static synchronized DataReader getInstance()
-    {
+    public static synchronized DataReader getInstance() {
         if (instance == null) {
             instance = new DataReader();
         }
         return instance;
     }
 
-    public CardData getCardData(String name, CardType type)
-    {
+    public CardData getCardData(String name, CardType type) {
         CardKeyPair key = new CardKeyPair(name, type);
-        if (cardCache.containsKey(key))
-        {
+        if (cardCache.containsKey(key)) {
             return cardCache.get(key);
         }
-        else
-        {
+        else {
             return readCardFile(name, type);
         }
     }
@@ -79,7 +75,7 @@ public class DataReader
             case CHAMPION -> {filepath = filepath + championCardDataFile;}
             case SPELL -> {filepath = filepath + spellCardDataFile;}
             case FOOD -> {filepath = filepath + foodCardDataFile;}
-            case DEBUFF -> {filepath = filepath + debuffCardDataFile;}
+            case STATUS_EFFECT -> {filepath = filepath + statusEffectCardDataFile;}
             case ATTACK -> {filepath = filepath + attackCardDataFile;}
             case ACTIVE_ABILITY -> {filepath = filepath + activeAbilityCardDataFile;}
             case PASSIVE_ABILITY -> {filepath = filepath + passiveAbilityCardDataFile;}
